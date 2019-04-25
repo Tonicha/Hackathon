@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "customer")
+@Table(name = "recipe")
 public class Recipe extends AbstractModel{
 
     private String name;
