@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "customer")
-public class Recipe {
+public class Recipe extends AbstractModel{
 
     private String name;
     private String description;
