@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
@@ -11,15 +11,14 @@
     <script modelType="application/javascript" async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-<form class="form-horizontal" th:object="${recipe}" th:action="${/recipe}" method="POST">
+<form class="form-horizontal" th:object="${recipeDto}" th:action="@{/recipe/add}" method="post">
     <fieldset>
         <div id="legend">
             <legend class="">Register</legend>
         </div>
         <div class="control-group">
             <!-- Username -->
-            <label class="control-label"  for="name">Username</label>
+            <label class="control-label"  for="name">Name</label>
             <div class="controls">
                 <input type="text" id="name" name="name" placeholder="" class="input-xlarge" th:field="*{name}">
                 <p class="help-block">Insert a name for the recipe</p>
@@ -28,7 +27,7 @@
 
         <div class="control-group">
             <!-- E-mail -->
-            <label class="control-label" for="description">E-mail</label>
+            <label class="control-label" for="description">Description</label>
             <div class="controls">
                 <input type="text" id="description" name="description" placeholder="" class="input-xlarge" th:field="*{description}">
                 <p class="help-block">Insert a description</p>
