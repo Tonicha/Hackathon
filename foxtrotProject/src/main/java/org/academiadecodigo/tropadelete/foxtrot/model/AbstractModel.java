@@ -58,5 +58,4 @@ public abstract class AbstractModel implements Model {
         this.updateTime = updateTime;
     }
 
-
 }

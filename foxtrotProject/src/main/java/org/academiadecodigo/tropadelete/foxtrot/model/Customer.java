@@ -2,18 +2,15 @@ package org.academiadecodigo.tropadelete.foxtrot.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "customer")
-public class Customer {
+public class Customer extends AbstractModel {
 
-    private int id;
     private String userName;
     private String email;
     private String password;
-    private Date creationDate;
 
     @OneToMany(
             cascade = {CascadeType.ALL},
@@ -26,25 +23,12 @@ public class Customer {
     )
     private List<Recipe> recipes = new ArrayList<>();
 
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public List<Recipe> getRecipes() {
         return recipes;
     }
 
     public void setRecipes(List<Recipe> recipes) {
         this.recipes = recipes;
-    }
-
-    public Date getCreationDate() {
-        return creationDate;
     }
 
     public String getUserName() {
@@ -86,11 +70,9 @@ public class Customer {
     @Override
     public String toString() {
         return "Customer{" +
-                "id=" + id +
-                ", userName='" + userName + '\'' +
+                "userName='" + userName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", creationDate=" + creationDate +
                 ", recipes=" + recipes +
                 '}';
     }
