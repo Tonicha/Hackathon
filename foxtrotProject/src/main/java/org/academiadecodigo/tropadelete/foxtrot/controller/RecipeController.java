@@ -8,9 +8,12 @@ import org.academiadecodigo.tropadelete.foxtrot.service.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/recipe")
@@ -37,7 +40,7 @@ public class RecipeController {
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/add")
-    public String showRegisterPage( @ModelAttribute("recipeDto") RecipeDto recipeDto, Model model){
+    public String showRegisterPage(@ModelAttribute("recipeDto") RecipeDto recipeDto, Model model){
 
         model.addAttribute("recipeDto", recipeDto);
         return "recipe/recipeRegister";
@@ -45,13 +48,17 @@ public class RecipeController {
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/add")
-    public String addRecipe(@ModelAttribute("recipeDto") RecipeDto recipeDto){
+    public String addRecipe(@Valid @ModelAttribute("recipeDto") RecipeDto recipeDto, BindingResult bindingResult){
+
+        if(bindingResult.hasErrors()){
+            return "recipe/recipeRegister";
+        }
 
         Recipe recipe = recipeDtoToRecipeAssembler.assemble(recipeDto);
 
         recipeService.addRecipe(recipe);
 
-
+        return "main-page";
 
     }
 

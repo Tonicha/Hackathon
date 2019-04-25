@@ -21,7 +21,6 @@
             <label class="control-label"  for="name">Name</label>
             <div class="controls">
                 <input type="text" id="name" name="name" placeholder="" class="input-xlarge" th:field="*{name}">
-                <p class="help-block">Insert a name for the recipe</p>
             </div>
         </div>
 
@@ -30,7 +29,6 @@
             <label class="control-label" for="description">Description</label>
             <div class="controls">
                 <input type="text" id="description" name="description" placeholder="" class="input-xlarge" th:field="*{description}">
-                <p class="help-block">Insert a description</p>
             </div>
         </div>
 
@@ -38,8 +36,7 @@
             <!-- Password-->
             <label class="control-label" for="firstIngredient">First ingredient</label>
             <div class="controls">
-                <input type="password" id="firstIngredient" name="firstIngredient" placeholder="" class="input-xlarge" th:field="*{firstIngredient}">
-                <p class="help-block">Insert the ingredient</p>
+                <input type="text" id="firstIngredient" name="firstIngredient" placeholder="" class="input-xlarge" th:field="*{firstIngredient}">
             </div>
         </div>
 
@@ -47,8 +44,7 @@
             <!-- Password -->
             <label class="control-label"  for="secondIngredient">Second ingredient</label>
             <div class="controls">
-                <input type="password" id="secondIngredient" name="secondIngredient" placeholder="" class="input-xlarge" th:field="*{secondIngredient}">
-                <p class="help-block">Please confirm password</p>
+                <input type="text" id="secondIngredient" name="secondIngredient" placeholder="" class="input-xlarge" th:field="*{secondIngredient}">
             </div>
         </div>
 
@@ -56,8 +52,7 @@
             <!-- Password -->
             <label class="control-label"  for="thirdIngredient">Third Ingredient</label>
             <div class="controls">
-                <input type="password" id="thirdIngredient" name="thirdIngredient" placeholder="" class="input-xlarge" th:field="*{thirdIngredient}">
-                <p class="help-block">Please confirm password</p>
+                <input type="text" id="thirdIngredient" name="thirdIngredient" placeholder="" class="input-xlarge" th:field="*{thirdIngredient}">
             </div>
         </div>
 
@@ -65,8 +60,7 @@
             <!-- Password -->
             <label class="control-label"  for="fourthIngredient">Fourth ingredient</label>
             <div class="controls">
-                <input type="password" id="fourthIngredient" name="fourthIngredient" placeholder="" class="input-xlarge" th:field="*{fourthIngredient}">
-                <p class="help-block">Please confirm password</p>
+                <input type="text" id="fourthIngredient" name="fourthIngredient" placeholder="" class="input-xlarge" th:field="*{fourthIngredient}">
             </div>
         </div>
 
@@ -74,16 +68,12 @@
             <!-- Password -->
             <label class="control-label"  for="fifthIngredient">Fifth ingredient</label>
             <div class="controls">
-                <input type="password" id="fifthIngredient" name="fifthIngredient" placeholder="" class="input-xlarge" th:field="*{fifthIngredient}">
-                <p class="help-block">Please confirm password</p>
+                <input type="text" id="fifthIngredient" name="fifthIngredient" placeholder="" class="input-xlarge" th:field="*{fifthIngredient}">
             </div>
         </div>
 
         <div class="control-group">
-            <!-- Button -->
-            <div class="controls">
-                <button class="btn btn-success">Register Ingredient</button>
-            </div>
+           <input type="submit" value="register recipe">
         </div>
     </fieldset>
 </form>
