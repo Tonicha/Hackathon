@@ -15,14 +15,23 @@ public class CustomerServiceImpl  implements CustomerService{
         this.customerDao = customerDao;
     }
 
-    public void addCustomer(){
-
-        Customer customer = new Customer();
-        customerDao.saveOrUpdate(customer);
+    public Customer addCustomer(Customer customer) {
+        return customerDao.saveOrUpdate(customer);
     }
 
 
     public Customer editCustomer(Integer id){
         return customerDao.findById(id);
     }
+
+    @Override
+    public Customer get(Integer id) {
+        return customerDao.findById(id);
+    }
+
+    @Override
+    public Customer getByUsername(String username) {
+        return customerDao.findByUsername(username);
+    }
+
 }
