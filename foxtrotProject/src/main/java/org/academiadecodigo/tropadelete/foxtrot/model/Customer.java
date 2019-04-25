@@ -1,5 +1,7 @@
 package org.academiadecodigo.tropadelete.foxtrot.model;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -7,7 +9,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "customer")
-public class Customer {
+public class Customer extends AbstractModel {
 
     private int id;
     private String userName;
@@ -25,15 +27,6 @@ public class Customer {
             fetch = FetchType.EAGER
     )
     private List<Recipe> recipes = new ArrayList<>();
-
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public List<Recipe> getRecipes() {
         return recipes;
