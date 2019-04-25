@@ -4,8 +4,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name = "ingredient")
+
 public class Ingredient extends AbstractModel {
 
     private String name;

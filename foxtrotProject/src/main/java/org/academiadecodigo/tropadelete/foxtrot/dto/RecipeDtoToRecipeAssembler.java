@@ -3,10 +3,12 @@ package org.academiadecodigo.tropadelete.foxtrot.dto;
 import org.academiadecodigo.tropadelete.foxtrot.model.Recipe;
 import org.academiadecodigo.tropadelete.foxtrot.service.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class RecipeDtoToRecipeAssembler {
 
     private RecipeService recipeService;

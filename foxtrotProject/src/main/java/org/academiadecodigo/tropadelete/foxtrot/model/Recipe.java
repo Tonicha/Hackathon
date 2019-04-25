@@ -13,10 +13,8 @@ public class Recipe extends AbstractModel{
     private String name;
     private String description;
 
+    @ElementCollection(targetClass=String.class)
     private List<String> ingredients = new ArrayList<>();
-
-    @ManyToOne
-    private Customer customer;
 
     public String getName() {
         return name;
@@ -40,14 +38,6 @@ public class Recipe extends AbstractModel{
 
     public void setIngredients(List<String> ingredients) {
         this.ingredients = ingredients;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
     }
 
     public void addIngredient(String ingredient) {
