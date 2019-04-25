@@ -10,12 +10,6 @@ public class Ingredient extends AbstractModel {
 
     private String name;
 
-    @ManyToMany(
-
-            cascade = {CascadeType.ALL},
-            fetch = FetchType.EAGER,
-            mappedBy = "ingredients"
-    )
     private List<Recipe> recipes = new ArrayList<>();
 
 
