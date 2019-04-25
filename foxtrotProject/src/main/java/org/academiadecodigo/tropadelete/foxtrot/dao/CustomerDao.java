@@ -1,4 +1,7 @@
 package org.academiadecodigo.tropadelete.foxtrot.dao;
 
-public class CustomerDao {
+import org.academiadecodigo.tropadelete.foxtrot.model.Customer;
+
+public interface CustomerDao extends Dao<Customer> {
+
 }
