@@ -23,8 +23,6 @@ public class CustomerServiceImpl  implements CustomerService{
 
 
     public Customer editCustomer(Integer id){
-
         return customerDao.findById(id);
-
     }
 }
