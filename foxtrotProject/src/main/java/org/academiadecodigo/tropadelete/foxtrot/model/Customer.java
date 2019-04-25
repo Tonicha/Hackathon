@@ -12,25 +12,6 @@ public class Customer extends AbstractModel {
     private String email;
     private String password;
 
-    @OneToMany(
-            cascade = {CascadeType.ALL},
-
-            orphanRemoval = true,
-
-            mappedBy = "customer",
-
-            fetch = FetchType.EAGER
-    )
-    private List<Recipe> recipes = new ArrayList<>();
-
-    public List<Recipe> getRecipes() {
-        return recipes;
-    }
-
-    public void setRecipes(List<Recipe> recipes) {
-        this.recipes = recipes;
-    }
-
     public String getUserName() {
         return userName;
     }
@@ -56,24 +37,12 @@ public class Customer extends AbstractModel {
 
     }
 
-
-    public void addRecipe(Recipe recipe) {
-        recipes.add(recipe);
-        recipe.setCustomer(this);
-    }
-
-    public void removeRecipe(Recipe recipe) {
-        recipes.remove(recipe);
-        recipe.setCustomer(null);
-    }
-
     @Override
     public String toString() {
         return "Customer{" +
                 "userName='" + userName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", recipes=" + recipes +
                 '}';
     }
 }
