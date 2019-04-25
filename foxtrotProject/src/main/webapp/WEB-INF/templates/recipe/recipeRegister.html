@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
@@ -11,15 +11,14 @@
     <script modelType="application/javascript" async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-<form class="form-horizontal" th:object="${recipe}" th:action="${/recipe}"method="POST">
+<form class="form-horizontal" th:object="${recipeDto}" th:action="@{/recipe/add}" method="post">
     <fieldset>
         <div id="legend">
             <legend class="">Register</legend>
         </div>
         <div class="control-group">
             <!-- Username -->
-            <label class="control-label"  for="name">Username</label>
+            <label class="control-label"  for="name">Name</label>
             <div class="controls">
                 <input type="text" id="name" name="name" placeholder="" class="input-xlarge" th:field="*{name}">
                 <p class="help-block">Insert a name for the recipe</p>
@@ -28,7 +27,7 @@
 
         <div class="control-group">
             <!-- E-mail -->
-            <label class="control-label" for="description">E-mail</label>
+            <label class="control-label" for="description">Description</label>
             <div class="controls">
                 <input type="text" id="description" name="description" placeholder="" class="input-xlarge" th:field="*{description}">
                 <p class="help-block">Insert a description</p>
@@ -37,7 +36,7 @@
 
         <div class="control-group">
             <!-- Password-->
-            <label class="control-label" for="firstIngredient">Password</label>
+            <label class="control-label" for="firstIngredient">First ingredient</label>
             <div class="controls">
                 <input type="password" id="firstIngredient" name="firstIngredient" placeholder="" class="input-xlarge" th:field="*{firstIngredient}">
                 <p class="help-block">Insert the ingredient</p>
@@ -46,7 +45,7 @@
 
         <div class="control-group">
             <!-- Password -->
-            <label class="control-label"  for="secondIngredient">Password (Confirm)</label>
+            <label class="control-label"  for="secondIngredient">Second ingredient</label>
             <div class="controls">
                 <input type="password" id="secondIngredient" name="secondIngredient" placeholder="" class="input-xlarge" th:field="*{secondIngredient}">
                 <p class="help-block">Please confirm password</p>
@@ -55,7 +54,7 @@
 
         <div class="control-group">
             <!-- Password -->
-            <label class="control-label"  for="thirdIngredient">Password (Confirm)</label>
+            <label class="control-label"  for="thirdIngredient">Third Ingredient</label>
             <div class="controls">
                 <input type="password" id="thirdIngredient" name="thirdIngredient" placeholder="" class="input-xlarge" th:field="*{thirdIngredient}">
                 <p class="help-block">Please confirm password</p>
@@ -64,7 +63,7 @@
 
         <div class="control-group">
             <!-- Password -->
-            <label class="control-label"  for="fourthIngredient">Password (Confirm)</label>
+            <label class="control-label"  for="fourthIngredient">Fourth ingredient</label>
             <div class="controls">
                 <input type="password" id="fourthIngredient" name="fourthIngredient" placeholder="" class="input-xlarge" th:field="*{fourthIngredient}">
                 <p class="help-block">Please confirm password</p>
@@ -73,7 +72,7 @@
 
         <div class="control-group">
             <!-- Password -->
-            <label class="control-label"  for="fifthIngredient">Password (Confirm)</label>
+            <label class="control-label"  for="fifthIngredient">Fifth ingredient</label>
             <div class="controls">
                 <input type="password" id="fifthIngredient" name="fifthIngredient" placeholder="" class="input-xlarge" th:field="*{fifthIngredient}">
                 <p class="help-block">Please confirm password</p>

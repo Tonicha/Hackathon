@@ -4,18 +4,11 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name = "ingredient")
+
 public class Ingredient extends AbstractModel {
 
     private String name;
 
-    @ManyToMany(
-
-            cascade = {CascadeType.ALL},
-            fetch = FetchType.EAGER,
-            mappedBy = "ingredients"
-    )
     private List<Recipe> recipes = new ArrayList<>();
 
 
