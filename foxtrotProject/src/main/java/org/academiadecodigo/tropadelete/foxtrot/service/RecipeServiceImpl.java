@@ -29,4 +29,5 @@ public class RecipeServiceImpl implements RecipeService {
         Recipe recipe = new Recipe();
         recipeDao.saveOrUpdate(recipe);
     }
+
 }

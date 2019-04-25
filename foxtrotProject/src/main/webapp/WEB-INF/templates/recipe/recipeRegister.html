@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<form class="form-horizontal" th:object="${recipe}" th:action="${/recipe}"method="POST">
+<form class="form-horizontal" th:object="${recipe}" th:action="${/recipe}" method="POST">
     <fieldset>
         <div id="legend">
             <legend class="">Register</legend>
@@ -37,7 +37,7 @@
 
         <div class="control-group">
             <!-- Password-->
-            <label class="control-label" for="firstIngredient">Password</label>
+            <label class="control-label" for="firstIngredient">First ingredient</label>
             <div class="controls">
                 <input type="password" id="firstIngredient" name="firstIngredient" placeholder="" class="input-xlarge" th:field="*{firstIngredient}">
                 <p class="help-block">Insert the ingredient</p>
@@ -46,7 +46,7 @@
 
         <div class="control-group">
             <!-- Password -->
-            <label class="control-label"  for="secondIngredient">Password (Confirm)</label>
+            <label class="control-label"  for="secondIngredient">Second ingredient</label>
             <div class="controls">
                 <input type="password" id="secondIngredient" name="secondIngredient" placeholder="" class="input-xlarge" th:field="*{secondIngredient}">
                 <p class="help-block">Please confirm password</p>
@@ -55,7 +55,7 @@
 
         <div class="control-group">
             <!-- Password -->
-            <label class="control-label"  for="thirdIngredient">Password (Confirm)</label>
+            <label class="control-label"  for="thirdIngredient">Third Ingredient</label>
             <div class="controls">
                 <input type="password" id="thirdIngredient" name="thirdIngredient" placeholder="" class="input-xlarge" th:field="*{thirdIngredient}">
                 <p class="help-block">Please confirm password</p>
@@ -64,7 +64,7 @@
 
         <div class="control-group">
             <!-- Password -->
-            <label class="control-label"  for="fourthIngredient">Password (Confirm)</label>
+            <label class="control-label"  for="fourthIngredient">Fourth ingredient</label>
             <div class="controls">
                 <input type="password" id="fourthIngredient" name="fourthIngredient" placeholder="" class="input-xlarge" th:field="*{fourthIngredient}">
                 <p class="help-block">Please confirm password</p>
@@ -73,7 +73,7 @@
 
         <div class="control-group">
             <!-- Password -->
-            <label class="control-label"  for="fifthIngredient">Password (Confirm)</label>
+            <label class="control-label"  for="fifthIngredient">Fifth ingredient</label>
             <div class="controls">
                 <input type="password" id="fifthIngredient" name="fifthIngredient" placeholder="" class="input-xlarge" th:field="*{fifthIngredient}">
                 <p class="help-block">Please confirm password</p>
