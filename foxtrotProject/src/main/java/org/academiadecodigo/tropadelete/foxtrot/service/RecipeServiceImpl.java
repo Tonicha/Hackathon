@@ -3,7 +3,9 @@ package org.academiadecodigo.tropadelete.foxtrot.service;
 import org.academiadecodigo.tropadelete.foxtrot.dao.RecipeDao;
 import org.academiadecodigo.tropadelete.foxtrot.model.Recipe;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class RecipeServiceImpl implements RecipeService {
 
     private RecipeDao recipeDao;

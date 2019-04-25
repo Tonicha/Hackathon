@@ -1,11 +1,13 @@
 package org.academiadecodigo.tropadelete.foxtrot.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "customer")
+@Table(name = "recipe")
 public class Recipe extends AbstractModel{
 
     private String name;
