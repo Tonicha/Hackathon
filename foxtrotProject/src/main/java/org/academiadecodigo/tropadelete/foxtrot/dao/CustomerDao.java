@@ -4,4 +4,5 @@ import org.academiadecodigo.tropadelete.foxtrot.model.Customer;
 
 public interface CustomerDao extends Dao<Customer> {
 
+    Customer findByUsername(String username);
 }
