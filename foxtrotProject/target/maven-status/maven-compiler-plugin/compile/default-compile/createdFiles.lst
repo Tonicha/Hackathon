@@ -20,7 +20,7 @@ org/academiadecodigo/tropadelete/foxtrot/model/Recipe.class
 org/academiadecodigo/tropadelete/foxtrot/dto/RecipeToRecipeDtoAssembler.class
 org/academiadecodigo/tropadelete/foxtrot/model/Customer.class
 org/academiadecodigo/tropadelete/foxtrot/dao/IngredientDao.class
-org/academiadecodigo/tropadelete/foxtrot/dao/RecipeDao.class
 org/academiadecodigo/tropadelete/foxtrot/dto/RecipeDtoToRecipeAssembler.class
+org/academiadecodigo/tropadelete/foxtrot/dao/RecipeDao.class
 org/academiadecodigo/tropadelete/foxtrot/dao/jpa/JpaRecipeDao.class
 org/academiadecodigo/tropadelete/foxtrot/dao/jpa/JpaIngredientDao.class
