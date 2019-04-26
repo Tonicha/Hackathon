@@ -13,21 +13,18 @@ public class RecipeDto {
     @NotBlank(message = "Description must be inserted.")
     private String description;
 
-    @NotBlank(message = "Must insert ingredient")
+    @NotBlank(message = "First ingredient is mandatory.")
     @Size(min = 2, max = 16)
     private String firstIngredient;
 
-    @NotBlank(message = "Must insert ingredient")
+    @NotBlank(message = "Second ingredient is mandatory.")
     @Size(min = 2, max = 16)
     private String secondIngredient;
 
-    @Size(min = 2, max = 16)
     private String thirdIngredient;
 
-    @Size(min = 2, max = 16)
     private String fourthIngredient;
 
-    @Size(min = 2, max = 16)
     private String fifthIngredient;
 
     public Integer getId() {

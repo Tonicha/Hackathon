@@ -6,6 +6,7 @@ import org.academiadecodigo.tropadelete.foxtrot.model.Ingredient;
 import org.academiadecodigo.tropadelete.foxtrot.model.Recipe;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -26,6 +27,7 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
+    @Transactional
     public void addRecipe(Recipe recipe){
         recipeDao.saveOrUpdate(recipe);
     }

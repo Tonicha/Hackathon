@@ -4,6 +4,7 @@ import org.academiadecodigo.tropadelete.foxtrot.dao.CustomerDao;
 import org.academiadecodigo.tropadelete.foxtrot.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class CustomerServiceImpl  implements CustomerService{
@@ -15,6 +16,7 @@ public class CustomerServiceImpl  implements CustomerService{
         this.customerDao = customerDao;
     }
 
+    @Transactional
     public Customer addCustomer(Customer customer) {
         return customerDao.saveOrUpdate(customer);
     }
