@@ -25,31 +25,41 @@
 </body>
 <div class="container">
 
-
     <div class="d-flex justify-content-center h-100">
         <div class="card">
             <div class="card-header">
-                <h3>Search recipe by ingredient</h3>
+                <h3>Search by ingredient</h3>
 
             </div>
             <div class="card-body">
-                <form class="form-group" th:object="${recipeDto}" th:action="@{/main-page}">
-
+                <form method="get" th:action="@{/recipe/search}">
 
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="searchTagResult"></i></span>
+                            <span class="input-group-text"><i class="fas fa-search"></i></span>
                         </div>
-                        <input type="search" class="form-control" placeholder=" " th:field="*{ingredient}">
+                        <input name="searched" class="form-control" type="text" placeholder="Search" aria-label="Search">
+
                     </div>
 
-                    <div class="form-group" th:object="${recipeDto}" th:action="@{/main-page}" method="get">
-                        <input type="submit" value="Search" class="btn float-left login_btn">
+                    <div class="form-group" th:object="${c}" th:action="@{/main-page}" method="get">
+                        <input type="submit" value="Search" class="btn float-left search_btn">
                     </div>
-                    <div class="form-group" th:object="${recipeDto}" th:action="@{/recipe/add}" method="get">
-                        <input type="submit" value="Add Recipe" class="btn float-right btn">
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3>Or add your own recipe</h3>
+
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group" th:object="${c}" th:action="@{/recipe/add}" method="get">
+                        <input type="submit" value="Add Recipe" class="btn float-right add_recipe_btn">
                     </div>
-               </form>
+                </form>
             </div>
         </div>
     </div>

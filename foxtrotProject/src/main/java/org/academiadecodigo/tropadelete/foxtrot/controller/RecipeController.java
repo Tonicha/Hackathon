@@ -13,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 
@@ -49,10 +50,10 @@ public class RecipeController {
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/search")
-    public String searchRecipe() {
-
+    public String searchRecipe(@RequestParam("searched") String ingredient, Model model) {
+        model.addAttribute("ingredient", ingredient);
         //recipeService.search(ingredient);
-        return "";
+        return "recipe/search";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/add")
