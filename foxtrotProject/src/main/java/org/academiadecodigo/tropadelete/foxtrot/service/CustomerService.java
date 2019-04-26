@@ -4,8 +4,11 @@ import org.academiadecodigo.tropadelete.foxtrot.model.Customer;
 
 public interface CustomerService {
 
-    void addCustomer();
+    Customer addCustomer(Customer customer);
 
     Customer editCustomer(Integer id);
 
+    Customer get(Integer id);
+
+    Customer getByUsername(String username);
 }
