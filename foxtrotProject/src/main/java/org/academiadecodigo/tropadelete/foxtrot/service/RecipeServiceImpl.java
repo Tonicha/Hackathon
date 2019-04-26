@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @Service
@@ -34,21 +35,21 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public List<Recipe> search(String ingredient) {
-        List<Ingredient> ingredients = ingredientDao.findAll();
+        List<Recipe> recipes = recipeDao.findAll();
 
-        List<Recipe> recipeList = null;
+        List<Recipe> foundRecipes = new LinkedList<>();
 
-        for (Ingredient searchedIngredient : ingredients ) {
-            if (searchedIngredient.getName().equals(ingredient)){
-                recipeList = (searchedIngredient.getRecipes());
-            }
+        for (Recipe recipe : recipes ) {
+           if(recipe.getIngredients().contains(ingredient)){
+               foundRecipes.add(recipe);
+           }
         }
 
-        if (recipeList == null) {
+        if (foundRecipes.size() < 1) {
             return null;
         }
 
-        return recipeList;
+        return foundRecipes;
     }
 
 }

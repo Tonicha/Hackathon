@@ -13,7 +13,7 @@ public class Recipe extends AbstractModel{
     private String name;
     private String description;
 
-    @ElementCollection(targetClass=String.class)
+    @ElementCollection(targetClass = String.class, fetch = FetchType.EAGER)
     private List<String> ingredients = new ArrayList<>();
 
     public String getName() {
@@ -33,6 +33,7 @@ public class Recipe extends AbstractModel{
     }
 
     public List<String> getIngredients() {
+        System.out.println(ingredients.listIterator());
         return ingredients;
     }
 
