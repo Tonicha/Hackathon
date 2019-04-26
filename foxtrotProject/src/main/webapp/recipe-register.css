@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html, body {
-    background-image: url('https://www.wallpaperup.com/uploads/wallpapers/2013/04/04/69918/a7ce8da7049d2828470b6a2bf287453c.jpg');
+    background-image: url('https://images.pexels.com/photos/273811/pexels-photo-273811.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -14,7 +14,7 @@ html, body {
 }
 
 .card {
-    height: 380px;
+    height: 560px;
     margin-top: auto;
     margin-bottom: auto;
     width: 400px;
@@ -41,7 +41,7 @@ input:focus {
 .add_recipe2_btn {
     color: black;
     background-color: #FFC312;
-    width: 100px;
+    width: 120px;
 }
 
 .add_recipe2_btn:hover {
