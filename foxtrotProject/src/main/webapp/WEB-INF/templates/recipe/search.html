@@ -2,29 +2,67 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Register</title>
 
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          modelType="text/css"/>
+    <script modelType="application/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script modelType="application/javascript" async
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
 <h2>Recipe List</h2>
 
-<div>
-    <table class="table table-striped">
-      <td th:each="recipes : ${recipe}">
-            <tr th:text="${recipes.name}"></tr>
-            <tr th:text="${recipes.description}"></tr>
-        <!--<tr th:each="ingredient : ${recipe}">
-            <td th:text="${recipient.accountNumber}"></td>
-            <td th:text="${recipient.name}"></td>
-            <td th:text="${recipient.email}"></td>
-            <td th:text="${recipient.phone}"></td>
-            <td th:text="${recipient.description}"></td>-->
-        </td>
-    </table>
-</div>
+<style>
+
+    html{
+        background-image: url('https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+    }
+
+    table{
+        background-color: saddlebrown;
+        color: white;
+    }
+
+
+</style>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">1st Ingredient</th>
+        <th scope="col">2nd Ingredient</th>
+        <th scope="col">3rd Ingredient</th>
+        <th scope="col">4th Ingredient</th>
+        <th scope="col">5th Ingredient</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="recipes : ${recipe}">
+        <th scope="row">1</th>
+        <td th:text="${recipes.name}"></td>
+        <td th:text="${recipes.description}"></td>
+        <td th:text="${recipes.getIngredients().get(0)}"></td>
+        <td th:text="${recipes.getIngredients().get(1)}"></td>
+        <td th:text="${recipes.getIngredients().get(2)}"></td>
+        <td th:text="${recipes.getIngredients().get(3)}"></td>
+        <td th:text="${recipes.getIngredients().get(4)}"></td>
+    </tr>
+    </tbody>
+</table>
+
 
 <div class="col-sm-3">
     <a class="btn btn-primary" th:href="@{/recipe/main-page}">Main Menu</a>
 </div>
+
+
 </body>
 </html>
