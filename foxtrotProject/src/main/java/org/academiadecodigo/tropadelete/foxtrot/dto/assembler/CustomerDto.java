@@ -20,7 +20,7 @@ public class CustomerDto {
     @Size(min = 3)
     private String password;
 
-    @NotBlank
+    @NotBlank(message = "Password does not match!")
     private String confirmedPassword;
 
     public Integer getId() {
