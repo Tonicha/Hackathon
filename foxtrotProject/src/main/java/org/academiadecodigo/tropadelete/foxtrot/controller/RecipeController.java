@@ -57,7 +57,7 @@ public class RecipeController {
 
         Recipe recipe = recipeDtoToRecipeAssembler.assemble(recipeDto);
 
-        //recipeService.addRecipe(recipe);
+        recipeService.addRecipe(recipe);
 
         return "main-page";
 
