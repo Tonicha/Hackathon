@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/recipe")
@@ -51,8 +52,11 @@ public class RecipeController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/search")
     public String searchRecipe(@RequestParam("searched") String ingredient, Model model) {
-        model.addAttribute("ingredient", ingredient);
-        //recipeService.search(ingredient);
+
+        List<Recipe> list = recipeService.search(ingredient);
+
+        model.addAttribute("recipe", list);
+
         return "recipe/search";
     }
 

@@ -4,6 +4,8 @@ import org.academiadecodigo.tropadelete.foxtrot.dao.RecipeDao;
 import org.academiadecodigo.tropadelete.foxtrot.model.Recipe;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class JpaRecipeDao extends AbstractDao<Recipe> implements RecipeDao {
 

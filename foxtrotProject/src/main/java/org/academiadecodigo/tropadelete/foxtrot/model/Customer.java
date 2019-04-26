@@ -1,8 +1,7 @@
 package org.academiadecodigo.tropadelete.foxtrot.model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Entity
 @Table(name = "customer")

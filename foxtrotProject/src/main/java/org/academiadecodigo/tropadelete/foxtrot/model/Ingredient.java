@@ -4,13 +4,11 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Ingredient extends AbstractModel {
 
     private String name;
 
     private List<Recipe> recipes = new ArrayList<>();
-
 
     public String getName() {
         return name;
