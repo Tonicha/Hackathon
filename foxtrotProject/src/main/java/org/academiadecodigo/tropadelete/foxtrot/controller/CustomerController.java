@@ -1,6 +1,6 @@
 package org.academiadecodigo.tropadelete.foxtrot.controller;
 
-import org.academiadecodigo.tropadelete.foxtrot.dto.assembler.CustomerDto;
+import org.academiadecodigo.tropadelete.foxtrot.dto.CustomerDto;
 import org.academiadecodigo.tropadelete.foxtrot.dto.assembler.CustomerToDtoAssembler;
 import org.academiadecodigo.tropadelete.foxtrot.dto.assembler.DtoToCustomerAssembler;
 import org.academiadecodigo.tropadelete.foxtrot.model.Customer;
