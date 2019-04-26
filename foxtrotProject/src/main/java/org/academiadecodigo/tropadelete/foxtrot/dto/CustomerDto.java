@@ -1,4 +1,4 @@
-package org.academiadecodigo.tropadelete.foxtrot.dto.assembler;
+package org.academiadecodigo.tropadelete.foxtrot.dto;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;

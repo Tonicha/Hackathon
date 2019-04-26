@@ -1,5 +1,6 @@
 package org.academiadecodigo.tropadelete.foxtrot.controller;
 
+import org.academiadecodigo.tropadelete.foxtrot.dto.CustomerDto;
 import org.academiadecodigo.tropadelete.foxtrot.dto.RecipeDto;
 import org.academiadecodigo.tropadelete.foxtrot.dto.RecipeDtoToRecipeAssembler;
 import org.academiadecodigo.tropadelete.foxtrot.dto.RecipeToRecipeDtoAssembler;
@@ -56,10 +57,18 @@ public class RecipeController {
 
         Recipe recipe = recipeDtoToRecipeAssembler.assemble(recipeDto);
 
-        recipeService.addRecipe(recipe);
+        //recipeService.addRecipe(recipe);
 
         return "main-page";
 
     }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/main-page")
+    public String showMainPage(@ModelAttribute("customer")CustomerDto customerDto){
+
+        //Verify customer login
+        return null;
+    }
+
 
 }

@@ -1,6 +1,6 @@
 package org.academiadecodigo.tropadelete.foxtrot.controller;
 
-import org.academiadecodigo.tropadelete.foxtrot.dto.assembler.CustomerDto;
+import org.academiadecodigo.tropadelete.foxtrot.dto.CustomerDto;
 import org.academiadecodigo.tropadelete.foxtrot.dto.assembler.CustomerToDtoAssembler;
 import org.academiadecodigo.tropadelete.foxtrot.dto.assembler.DtoToCustomerAssembler;
 import org.academiadecodigo.tropadelete.foxtrot.model.Customer;
@@ -10,10 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
