@@ -5,6 +5,7 @@
     <title>Register</title>
 
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" modelType="text/css"/>
     <script modelType="application/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -21,10 +22,7 @@
             <label class="control-label"  for="name">Name</label>
             <div class="controls">
                 <input type="text" id="name" name="name" placeholder="" class="input-xlarge" th:field="*{name}">
-<<<<<<< HEAD
                 <p class="help-block">Insert a name for the recipe</p>
-=======
->>>>>>> master
             </div>
         </div>
 
@@ -33,10 +31,7 @@
             <label class="control-label" for="description">Description</label>
             <div class="controls">
                 <input type="text" id="description" name="description" placeholder="" class="input-xlarge" th:field="*{description}">
-<<<<<<< HEAD
                 <p class="help-block">Insert a description</p>
-=======
->>>>>>> master
             </div>
         </div>
 
@@ -44,12 +39,8 @@
             <!-- Password-->
             <label class="control-label" for="firstIngredient">First ingredient</label>
             <div class="controls">
-<<<<<<< HEAD
                 <input type="password" id="firstIngredient" name="firstIngredient" placeholder="" class="input-xlarge" th:field="*{firstIngredient}">
                 <p class="help-block">Insert the ingredient</p>
-=======
-                <input type="text" id="firstIngredient" name="firstIngredient" placeholder="" class="input-xlarge" th:field="*{firstIngredient}">
->>>>>>> master
             </div>
         </div>
 
@@ -57,12 +48,8 @@
             <!-- Password -->
             <label class="control-label"  for="secondIngredient">Second ingredient</label>
             <div class="controls">
-<<<<<<< HEAD
                 <input type="password" id="secondIngredient" name="secondIngredient" placeholder="" class="input-xlarge" th:field="*{secondIngredient}">
                 <p class="help-block">Please confirm password</p>
-=======
-                <input type="text" id="secondIngredient" name="secondIngredient" placeholder="" class="input-xlarge" th:field="*{secondIngredient}">
->>>>>>> master
             </div>
         </div>
 
@@ -70,12 +57,8 @@
             <!-- Password -->
             <label class="control-label"  for="thirdIngredient">Third Ingredient</label>
             <div class="controls">
-<<<<<<< HEAD
                 <input type="password" id="thirdIngredient" name="thirdIngredient" placeholder="" class="input-xlarge" th:field="*{thirdIngredient}">
                 <p class="help-block">Please confirm password</p>
-=======
-                <input type="text" id="thirdIngredient" name="thirdIngredient" placeholder="" class="input-xlarge" th:field="*{thirdIngredient}">
->>>>>>> master
             </div>
         </div>
 
@@ -83,12 +66,8 @@
             <!-- Password -->
             <label class="control-label"  for="fourthIngredient">Fourth ingredient</label>
             <div class="controls">
-<<<<<<< HEAD
                 <input type="password" id="fourthIngredient" name="fourthIngredient" placeholder="" class="input-xlarge" th:field="*{fourthIngredient}">
                 <p class="help-block">Please confirm password</p>
-=======
-                <input type="text" id="fourthIngredient" name="fourthIngredient" placeholder="" class="input-xlarge" th:field="*{fourthIngredient}">
->>>>>>> master
             </div>
         </div>
 
@@ -96,27 +75,108 @@
             <!-- Password -->
             <label class="control-label"  for="fifthIngredient">Fifth ingredient</label>
             <div class="controls">
-<<<<<<< HEAD
                 <input type="password" id="fifthIngredient" name="fifthIngredient" placeholder="" class="input-xlarge" th:field="*{fifthIngredient}">
                 <p class="help-block">Please confirm password</p>
-=======
-                <input type="text" id="fifthIngredient" name="fifthIngredient" placeholder="" class="input-xlarge" th:field="*{fifthIngredient}">
->>>>>>> master
             </div>
         </div>
 
         <div class="control-group">
-<<<<<<< HEAD
             <!-- Button -->
             <div class="controls">
                 <button class="btn btn-success">Register Ingredient</button>
             </div>
-=======
-           <input type="submit" value="register recipe">
->>>>>>> master
         </div>
     </fieldset>
 </form>
 
+=======
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          modelType="text/css"/>
+    <script modelType="application/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script modelType="application/javascript" async
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<section class="registerSection" style="position: relative; width: 30%; margin: 0 auto">
+    <form class="form-horizontal" th:object="${recipeDto}" th:action="@{/recipe/add}" method="post" style="position: absolute; margin: 0 auto">
+        <fieldset>
+            <div id="legend">
+                <legend class="">Register</legend>
+            </div>
+            <div class="control-group">
+                <!-- Username -->
+                <label class="control-label" for="name">Name</label>
+                <div class="controls">
+                    <input type="text" id="name" name="name" placeholder="" class="input-xlarge" th:field="*{name}">
+                    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name must be Inserted.</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <!-- E-mail -->
+                <label class="control-label" for="description">Description</label>
+                <div class="controls">
+                    <input type="text" id="description" name="description" placeholder="" class="input-xlarge"
+                           th:field="*{description}">
+                    <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description but be inserted.</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <!-- Password-->
+                <label class="control-label" for="firstIngredient">First ingredient</label>
+                <div class="controls">
+                    <input type="text" id="firstIngredient" name="firstIngredient" placeholder="" class="input-xlarge"
+                           th:field="*{firstIngredient}">
+                    <span th:if="${#fields.hasErrors('firstIngredient')}" th:errors="*{firstIngredient}">First ingredient is mandatory.</span>
+
+                </div>
+            </div>
+
+            <div class="control-group">
+                <!-- Password -->
+                <label class="control-label" for="secondIngredient">Second ingredient</label>
+                <div class="controls">
+                    <input type="text" id="secondIngredient" name="secondIngredient" placeholder="" class="input-xlarge"
+                           th:field="*{secondIngredient}">
+                    <span th:if="${#fields.hasErrors('secondIngredient')}" th:errors="*{secondIngredient}">Second ingredient is mandatory.</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <!-- Password -->
+                <label class="control-label" for="thirdIngredient">Third Ingredient</label>
+                <div class="controls">
+                    <input type="text" id="thirdIngredient" name="thirdIngredient" placeholder="" class="input-xlarge"
+                           th:field="*{thirdIngredient}">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <!-- Password -->
+                <label class="control-label" for="fourthIngredient">Fourth ingredient</label>
+                <div class="controls">
+                    <input type="text" id="fourthIngredient" name="fourthIngredient" placeholder="" class="input-xlarge"
+                           th:field="*{fourthIngredient}">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <!-- Password -->
+                <label class="control-label" for="fifthIngredient">Fifth ingredient</label>
+                <div class="controls">
+                    <input type="text" id="fifthIngredient" name="fifthIngredient" placeholder="" class="input-xlarge"
+                           th:field="*{fifthIngredient}">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <input type="submit" value="register recipe">
+            </div>
+        </fieldset>
+    </form>
+</section>
+>>>>>>> 713025150a2e7e2f3773333e6b6a4f0aa716cba4
 </body>
 </html>
