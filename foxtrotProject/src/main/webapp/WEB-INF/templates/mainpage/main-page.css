@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html, body {
-    background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+    background-image: url('https://images.unsplash.com/photo-1535914254981-b5012eebbd15?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -14,22 +14,16 @@ html, body {
 }
 
 .card {
-    height: 370px;
+    height: 230px;
     margin-top: auto;
     margin-bottom: auto;
+    margin-right: 20px;
     width: 400px;
     background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
-
 .card-header h3 {
     color: white;
-}
-
-.social_icon {
-    position: absolute;
-    right: 20px;
-    top: -45px;
 }
 
 .input-group-prepend span {
@@ -44,24 +38,26 @@ input:focus {
     box-shadow: 0 0 0 0 !important;
 }
 
-.remember {
-    color: white;
-}
-
-.remember input {
-    width: 20px;
-    height: 20px;
-    margin-left: 15px;
-    margin-right: 5px;
-}
-
-.login_btn {
+.search_btn {
     color: black;
     background-color: #FFC312;
     width: 100px;
 }
 
-.login_btn:hover {
+.search_btn:hover {
+    color: black;
+    background-color: white;
+}
+
+.add_recipe_btn {
+    position: relative;
+    bottom: -40px;
+    color: black;
+    background-color: #FFC312;
+    width: 120px;
+}
+
+.add_recipe_btn:hover {
     color: black;
     background-color: white;
 }
@@ -70,6 +66,3 @@ input:focus {
     color: white;
 }
 
-.links a {
-    margin-left: 4px;
-}
