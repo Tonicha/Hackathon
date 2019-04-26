@@ -48,6 +48,13 @@ public class RecipeController {
 
     }
 
+    @RequestMapping(method = RequestMethod.GET, path = "/search")
+    public String searchRecipe() {
+
+        //recipeService.search(ingredient);
+        return "";
+    }
+
     @RequestMapping(method = RequestMethod.POST, path = "/add")
     public String addRecipe(@Valid @ModelAttribute("recipeDto") RecipeDto recipeDto, BindingResult bindingResult){
 
@@ -59,7 +66,7 @@ public class RecipeController {
 
         recipeService.addRecipe(recipe);
 
-        return "/main-page";
+        return "recipe/main-page";
 
     }
 
