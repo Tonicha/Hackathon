@@ -59,7 +59,7 @@ public class RecipeController {
 
         recipeService.addRecipe(recipe);
 
-        return "main-page";
+        return "mainpage/main-page";
 
     }
 
