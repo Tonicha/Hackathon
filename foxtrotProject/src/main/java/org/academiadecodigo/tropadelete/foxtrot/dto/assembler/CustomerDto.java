@@ -2,26 +2,26 @@ package org.academiadecodigo.tropadelete.foxtrot.dto.assembler;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class CustomerDto {
     private Integer id;
 
-    @NotNull(message = "You need to type a username!")
     @NotBlank(message = "You need to type a username!")
     @Size(min = 3, max = 30, message = "Invalid number of characters.")
     private String username;
 
 
-    @NotNull(message = "You need to type an email!")
     @NotBlank(message = "You need to type an email!")
     @Email
     private String email;
 
-    @NotNull(message = "Your password must not be blank.")
     @NotBlank(message = "Your password must not be blank")
+    @Size(min = 3)
     private String password;
+
+    @NotBlank
+    private String confirmedPassword;
 
     public Integer getId() {
         return id;
@@ -53,5 +53,13 @@ public class CustomerDto {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getConfirmedPassword() {
+        return confirmedPassword;
+    }
+
+    public void setConfirmedPassword(String confirmedPassword) {
+        this.confirmedPassword = confirmedPassword;
     }
 }
