@@ -14,7 +14,7 @@ public class SpringBootStrap implements ApplicationListener<ContextRefreshedEven
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
 
-        System.getProperties().setProperty("spring.profiles.active", "prod");
+        System.getProperties().setProperty("spring.profiles.active", "dev");
 
         String[] profiles = event.getApplicationContext().getEnvironment().getActiveProfiles();
 

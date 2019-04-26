@@ -2,6 +2,7 @@ package org.academiadecodigo.tropadelete.foxtrot.dao.jpa;
 
 import org.academiadecodigo.tropadelete.foxtrot.dao.Dao;
 import org.academiadecodigo.tropadelete.foxtrot.model.Model;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -18,7 +19,7 @@ public abstract class AbstractDao <T extends Model> implements Dao<T> {
 
     public AbstractDao( Class<T> modelType) {this.modelType = modelType; }
 
-    public void setEm(EntityManager em) {this.em = em;}
+    //public void setEm(EntityManager em) {this.em = em;}
 
     @Override
     public List<T> findAll() {
