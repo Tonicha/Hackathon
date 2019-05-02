@@ -13,8 +13,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/recipe")
@@ -48,6 +50,16 @@ public class RecipeController {
 
     }
 
+    @RequestMapping(method = RequestMethod.GET, path = "/search")
+    public String searchRecipe(@RequestParam("searched") String ingredient, Model model) {
+
+        List<Recipe> list = recipeService.search(ingredient);
+
+        model.addAttribute("recipe", list);
+
+        return "recipe/search";
+    }
+
     @RequestMapping(method = RequestMethod.POST, path = "/add")
     public String addRecipe(@Valid @ModelAttribute("recipeDto") RecipeDto recipeDto, BindingResult bindingResult){
 
@@ -59,7 +71,7 @@ public class RecipeController {
 
         recipeService.addRecipe(recipe);
 
-        return "main-page";
+        return "recipe/main-page";
 
     }
 

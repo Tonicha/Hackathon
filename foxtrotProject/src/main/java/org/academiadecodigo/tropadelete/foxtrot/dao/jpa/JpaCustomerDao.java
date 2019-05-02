@@ -22,7 +22,7 @@ public class JpaCustomerDao extends AbstractDao<Customer> implements CustomerDao
         CriteriaQuery<Customer> criteriaQuery = builder.createQuery(Customer.class);
         Root root = criteriaQuery.from(Customer.class);
         criteriaQuery.select(root);
-        criteriaQuery.where(builder.equal(root.get("username"), username));
+        criteriaQuery.where(builder.equal(root.get("USERNAME"), username));
         return em.createQuery(criteriaQuery).getSingleResult();
     }
 }

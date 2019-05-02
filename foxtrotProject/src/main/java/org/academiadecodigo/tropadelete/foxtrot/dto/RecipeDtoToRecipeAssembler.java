@@ -1,5 +1,6 @@
 package org.academiadecodigo.tropadelete.foxtrot.dto;
 
+import org.academiadecodigo.tropadelete.foxtrot.model.Ingredient;
 import org.academiadecodigo.tropadelete.foxtrot.model.Recipe;
 import org.academiadecodigo.tropadelete.foxtrot.service.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,4 +36,5 @@ public class RecipeDtoToRecipeAssembler {
 
         return recipe;
     }
+
 }

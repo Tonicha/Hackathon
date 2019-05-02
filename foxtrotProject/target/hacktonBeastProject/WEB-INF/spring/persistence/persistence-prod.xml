@@ -11,11 +11,7 @@
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 
         <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
-<<<<<<< HEAD
-        <property name="jdbcUrl" value="jdbc:mysql://${prod.jdbc.host}/${prod.jdbc.database}?useSSL=false"/>
-=======
         <property name="jdbcUrl" value="jdbc:mysql://${prod.jdbc.host}/${prod.jdbc.database}?createDatabaseIfNotExist=true&amp;useSSL=false"/>
->>>>>>> 713025150a2e7e2f3773333e6b6a4f0aa716cba4
         <property name="user" value="${prod.jdbc.username}"/>
         <property name="password" value="${prod.jdbc.password}"/>
 
@@ -45,11 +41,7 @@
                 <entry key="hibernate.show_sql" value="${prod.debug}" />
                 <entry key="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
                 <!-- Run as create once to initialize the schema -->
-<<<<<<< HEAD
-                <!--<entry key="hibernate.hbm2ddl.auto" value="validate"/>-->
-=======
-                <entry key="hibernate.hbm2ddl.auto" value="validate"/>
->>>>>>> 713025150a2e7e2f3773333e6b6a4f0aa716cba4
+                <entry key="hibernate.hbm2ddl.auto" value="create"/>
             </map>
         </property>
     </bean>
