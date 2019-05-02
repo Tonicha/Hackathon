@@ -159,6 +159,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # Target folder
-*/target/**
+*/target
 
 # End of https://www.gitignore.io/api/vim,macos,windows,intellij+all
