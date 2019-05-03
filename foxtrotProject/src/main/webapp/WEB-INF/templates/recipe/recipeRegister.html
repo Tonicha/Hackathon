@@ -2,95 +2,107 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Register</title>
+    <title>Sign Up</title>
 
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-          modelType="text/css"/>
-    <script modelType="application/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script modelType="application/javascript" async
-            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/recipe-register.css}">
 </head>
+
 <body>
-<section class="registerSection" style="position: relative; width: 30%; margin: 0 auto">
-    <form class="form-horizontal" th:object="${recipeDto}" th:action="@{/recipe/add}" method="post" style="position: absolute; margin: 0 auto">
-        <fieldset>
-            <div id="legend">
-                <legend class="">Register</legend>
-            </div>
-            <div class="control-group">
-                <!-- Username -->
-                <label class="control-label" for="name">Name</label>
-                <div class="controls">
-                    <input type="text" id="name" name="name" placeholder="" class="input-xlarge" th:field="*{name}">
-                    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name must be Inserted.</span>
-                </div>
-            </div>
+<div class="container">
 
-            <div class="control-group">
-                <!-- E-mail -->
-                <label class="control-label" for="description">Description</label>
-                <div class="controls">
-                    <input type="text" id="description" name="description" placeholder="" class="input-xlarge"
-                           th:field="*{description}">
-                    <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description but be inserted.</span>
-                </div>
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">
+                <h3>Your very special recipe</h3>
             </div>
+            <div class="card-body">
+                <form class="form-group" th:object="${recipeDto}" th:action="@{/recipe/add}" method="post">
 
-            <div class="control-group">
-                <!-- Password-->
-                <label class="control-label" for="firstIngredient">First ingredient</label>
-                <div class="controls">
-                    <input type="text" id="firstIngredient" name="firstIngredient" placeholder="" class="input-xlarge"
-                           th:field="*{firstIngredient}">
-                    <span th:if="${#fields.hasErrors('firstIngredient')}" th:errors="*{firstIngredient}">First ingredient is mandatory.</span>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-list"></i></span>
+                        </div>
+                        <input type="text" id="name" name="name" placeholder="name" class="input-xlarge"
+                               th:field="*{name}">
+                        <span th:if="${#fields.hasErrors('name')}"
+                              th:errors="*{name}">Name must be Inserted.</span>
+                    </div>
 
-                </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-list"></i></span>
+                        </div>
+                        <input type="text" id="description" name="description" placeholder="description"
+                               class="input-xlarge"
+                               th:field="*{description}">
+                        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description must be inserted.</span>
+                    </div>
+
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-list"></i></span>
+                        </div>
+                        <input type="text" id="firstIngredient" name="firstIngredient" placeholder="first ingredient"
+                               class="input-xlarge"
+                               th:field="*{firstIngredient}">
+                        <span th:if="${#fields.hasErrors('firstIngredient')}" th:errors="*{firstIngredient}">First ingredient is mandatory.</span>
+                    </div>
+
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-list"></i></span>
+                        </div>
+                        <input type="text" id="secondIngredient" name="secondIngredient" placeholder="second ingredient"
+                               class="input-xlarge"
+                               th:field="*{secondIngredient}">
+                        <span th:if="${#fields.hasErrors('secondIngredient')}" th:errors="*{secondIngredient}">Second ingredient is mandatory.</span>
+                    </div>
+
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-list"></i></span>
+                        </div>
+                        <input type="text" id="thirdIngredient" name="thirdIngredient" placeholder="third ingredient"
+                               class="input-xlarge"
+                               th:field="*{thirdIngredient}">
+                    </div>
+
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-list"></i></span>
+                        </div>
+                        <input type="text" id="fourthIngredient" name="fourthIngredient" placeholder="fourth ingredient"
+                               class="input-xlarge"
+                               th:field="*{fourthIngredient}">
+                    </div>
+
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-list"></i></span>
+                        </div>
+                        <input type="text" id="fifthIngredient" name="fifthIngredient" placeholder="fifth ingredient"
+                               class="input-xlarge"
+                               th:field="*{fifthIngredient}">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Add Recipe" class="btn float-right add_recipe2_btn">
+                    </div>
+
+                </form>
             </div>
-
-            <div class="control-group">
-                <!-- Password -->
-                <label class="control-label" for="secondIngredient">Second ingredient</label>
-                <div class="controls">
-                    <input type="text" id="secondIngredient" name="secondIngredient" placeholder="" class="input-xlarge"
-                           th:field="*{secondIngredient}">
-                    <span th:if="${#fields.hasErrors('secondIngredient')}" th:errors="*{secondIngredient}">Second ingredient is mandatory.</span>
-                </div>
-            </div>
-
-            <div class="control-group">
-                <!-- Password -->
-                <label class="control-label" for="thirdIngredient">Third Ingredient</label>
-                <div class="controls">
-                    <input type="text" id="thirdIngredient" name="thirdIngredient" placeholder="" class="input-xlarge"
-                           th:field="*{thirdIngredient}">
-                </div>
-            </div>
-
-            <div class="control-group">
-                <!-- Password -->
-                <label class="control-label" for="fourthIngredient">Fourth ingredient</label>
-                <div class="controls">
-                    <input type="text" id="fourthIngredient" name="fourthIngredient" placeholder="" class="input-xlarge"
-                           th:field="*{fourthIngredient}">
-                </div>
-            </div>
-
-            <div class="control-group">
-                <!-- Password -->
-                <label class="control-label" for="fifthIngredient">Fifth ingredient</label>
-                <div class="controls">
-                    <input type="text" id="fifthIngredient" name="fifthIngredient" placeholder="" class="input-xlarge"
-                           th:field="*{fifthIngredient}">
-                </div>
-            </div>
-
-            <div class="control-group">
-                <input type="submit" value="register recipe">
-            </div>
-        </fieldset>
-    </form>
-</section>
+        </div>
+    </div>
+</div>
 </body>
 </html>

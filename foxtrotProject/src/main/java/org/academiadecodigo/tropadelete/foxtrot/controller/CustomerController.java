@@ -27,22 +27,22 @@ public class CustomerController {
     //add
     //login
 
-    @RequestMapping(method = RequestMethod.GET, path = "/register")
+    @RequestMapping(method = RequestMethod.GET, path = {"/register"})
     public String addCustomer(Model model) {
         model.addAttribute("customer", new CustomerDto());
-        return "customer/add";
+        return "signup/signUp";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action=save")
+    @RequestMapping(method = RequestMethod.POST, path = {"/", "", "/register"})
     public String saveCustomer(@Valid @ModelAttribute("customer") CustomerDto customerDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors()) {
-            return "customer/add";
+            return "signup/signUp";
         }
 
         if (!customerDto.getPassword().equals(customerDto.getConfirmedPassword())) {
             redirectAttributes.addFlashAttribute("lastAction", "Password does not match!");
-            return "customer/add";
+            return "signup/signUp";
         }
 
         Customer savedCustomer = customerService.addCustomer(dtoToCustomerAssembler.convert(customerDto));
@@ -52,10 +52,10 @@ public class CustomerController {
     }
 
 
-    @RequestMapping(method = RequestMethod.GET, path = "/login")
+    @RequestMapping(method = RequestMethod.GET, path = {"/login", "/", ""})
     public String login(Model model) {
         model.addAttribute("customer", new CustomerDto());
-        return "customer/validate";
+        return "login/login";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/validate")
@@ -63,14 +63,14 @@ public class CustomerController {
         CustomerDto savedCustomer = customerToDtoAssembler.convert(customerService.getByUsername(customerDto.getUsername()));
 
         if (savedCustomer == null) {
-            return "/customer/login";
+            return "redirect:/customer/login";
         }
 
-        if (savedCustomer.getPassword() != customerDto.getPassword()) {
-            return "/customer/login";
+        if (!savedCustomer.getPassword().equals(customerDto.getPassword())) {
+            return "redirect:/customer/login";
         }
 
-        return "/mainmenu";
+        return "redirect:/recipe/main-page";
     }
 
 
